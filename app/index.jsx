@@ -1,4 +1,5 @@
 import { Text, View } from "react-native";
+import ImageGradientColorTint from "../components/ImageGradientColorTint";
 
 export default function Index() {
   return (
@@ -9,7 +10,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Text>image overlay</Text>
+      <ImageGradientColorTint />
     </View>
   );
 }
