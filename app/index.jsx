@@ -10,7 +10,7 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <ImageGradientColorTint />
+      <ImageGradientColorTint imageUri={require('../assets/images/house.png')} width={200} height={200} resizeMode={'contain'} gradientColors={['#FFF675', '#F49D6E', '#F146AD']} />
     </View>
   );
 }

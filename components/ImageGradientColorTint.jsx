@@ -2,23 +2,23 @@ import { StyleSheet, View, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import MaskedView from '@react-native-masked-view/masked-view';
 
-const ImageGradientColorTint = () => {
+const ImageGradientColorTint = ({ imageUri, width, height, resizeMode, gradientColors }) => {
     return (
-        <View style={styles.container}>
+        <View style={{ width: width, height: height }}>
           <MaskedView
             style={{ flex: 1 }}
             maskElement={
               <View >
                 <Image
-                  source={require('../assets/images/house.png')}
+                  source={imageUri}
                   style={styles.maskImage}
-                  resizeMode="contain"
+                  resizeMode={resizeMode}
                 />
               </View>
             }
           >
             <LinearGradient
-              colors={['#FFF675', '#F49D6E', '#F146AD']}
+              colors={gradientColors}
               style={styles.gradient}
             />
           </MaskedView>
@@ -27,10 +27,6 @@ const ImageGradientColorTint = () => {
     };
     
     const styles = StyleSheet.create({
-      container: {
-        width: 200,
-        height: 200,
-      },
       maskImage: {
         width: '100%',
         height: '100%',
